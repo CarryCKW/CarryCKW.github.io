@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://CarryCKW.github.io</id>
     <title>Great Perheps</title>
-    <updated>2020-05-25T09:22:08.157Z</updated>
+    <updated>2020-05-25T09:37:21.687Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://CarryCKW.github.io"/>
     <link rel="self" href="https://CarryCKW.github.io/atom.xml"/>
@@ -17,11 +17,11 @@
         </link>
         <updated>2020-05-25T08:20:51.000Z</updated>
         <summary type="html"><![CDATA[<p>1.总体上，JVM所管理的内存将会包括以下几个部分。<br>
-<img src="https://CarryCKW.github.io/post-images/1590395263438.jpg" alt="" loading="lazy"><br>
+<img src="https://CarryCKW.github.io/post-images/1590399408791.svg" alt="" loading="lazy"><br>
 那么接下来对他们详细的讲述，以备今后之需。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>1.总体上，JVM所管理的内存将会包括以下几个部分。<br>
-<img src="https://CarryCKW.github.io/post-images/1590395263438.jpg" alt="" loading="lazy"><br>
+<img src="https://CarryCKW.github.io/post-images/1590399408791.svg" alt="" loading="lazy"><br>
 那么接下来对他们详细的讲述，以备今后之需。</p>
 <!-- more -->
 <h1 id="21程序计数器">2.1<strong>程序计数器</strong></h1>
