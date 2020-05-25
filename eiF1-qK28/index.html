@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>A dream away | Great Perheps</title>
+<title>JVM运行时数据区域 | Great Perheps</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,8 +18,13 @@
 
 
 
-    <meta name="description" content="经过昨晚的雨，今天不是显得那么闷热了，但起床后还是能依稀记得刚才的梦，梦中，教室里上着课，可能已经是中午了，大家都在午觉，你也依靠在木桌上尝试着远离着大夏天的热度，我知道你没有睡着，但我还是尝试着慢慢倚靠过来，不经意发现了你动了一下，此时，..." />
-    <meta name="keywords" content="旅途感想" />
+    <meta name="description" content="1.总体上，JVM所管理的内存将会包括以下几个部分。
+
+那么接下来对他们详细的讲述，以备今后之需。
+
+2.1程序计数器
+程序计数器可以看作是当前线程所执行的字节码的行号计数器，而计数器本身的值通过被字节码解释器改变，以此来选取下一条需要执行..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -102,28 +107,37 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">A dream away</h2>
-            <div class="post-date">2020-05-24</div>
+            <h2 class="post-title">JVM运行时数据区域</h2>
+            <div class="post-date">2020-05-25</div>
             
             <div class="post-content" v-pre>
-              <p>经过昨晚的雨，今天不是显得那么闷热了，但起床后还是能依稀记得刚才的梦，梦中，教室里上着课，可能已经是中午了，大家都在午觉，你也依靠在木桌上尝试着远离着大夏天的热度，我知道你没有睡着，但我还是尝试着慢慢倚靠过来，不经意发现了你动了一下，此时，梦结束了。最近看了一遍《声之形》，里面的石田将也好幸运啊，他不断的学习手语，无意间找到了西宫上课的地方，并付出了好多，曾经被他欺负的女孩能够被他温柔的改过所感动，或许在我们看来他努力地救赎曾经的自己，也是为了抓住现在的西宫，可这总能发生多少次呢。或许我就是那个石田，当我走了一圈世界后，世界成就了适合你的我，可你不再认识我了，我试着让你再次认识我，可过去不会答应啊，反正你也要快奔向成功了，还是希望将来的你，即使在遭遇人生低谷的时候，不要灰心，至少曾经有人被你的魅力所吸引，曾经是，现在是，以后也是！</p>
+              <p>1.总体上，JVM所管理的内存将会包括以下几个部分。<br>
+<img src="https://CarryCKW.github.io/post-images/1590395263438.jpg" alt="" loading="lazy"><br>
+那么接下来对他们详细的讲述，以备今后之需。</p>
+<!-- more -->
+<h1 id="21程序计数器">2.1<strong>程序计数器</strong></h1>
+<p>程序计数器可以看作是当前线程所执行的字节码的行号计数器，而计数器本身的值通过被字节码解释器改变，以此来选取下一条需要执行的字节码指令。<br>
+由于Java虚拟机的多线程是通过线程轮流切换、分配处理器执行时间的方式实现的，在任何一个确定的时间点上，一个处理器（对于多核处理器来说是一个内核）都只会执行一条线程中的指令。因此，为了能够在多线程切换中能够恢复到上一次正确的位置，每个线程都会有属于自己的独有的程序计数器，并且各线程的PC互不影响，我们称这类内存为“线程私有”的内存。</p>
+<!-- more -->
+<h1 id="22java虚拟机栈">2.2<strong>Java虚拟机栈</strong></h1>
+<p>虚拟机栈描述的是Java方法执行的线程内存模型。每个方法被执行的时候，Java虚拟机都会同步创建一个栈帧（Stack Frame）用于存储局部变量表、操作数栈、动态连接、方法出口等信息。每一个方法被调用到执行结束的过程中，都伴随着栈帧在虚拟机栈的出栈，入栈。<br>
+对于程序员来说，比较关心的是“堆”和“栈”，一般来说栈指的是这里的虚拟机栈，更多情况下是虚拟机栈中局部变量表部分。<br>
+局部变量表中存放了编译器可知的Java虚拟机基本数据类型（char, int, boolen...)、对象引用(reference类型，它不同于对象本身，可能是指向对象起始地址的指针，也可能是代表对象的句柄) 和 returnAddress类型(指向一条字节码指令的地址)。而这些数据在局部标量表中存储空间以局部变量槽(Slot)来表示，并且数据本身的大小决定了Slot占据的数量。进入一个方法后，在方法需要在栈帧中占多大的局部变量空间在编译期间就可以确定，并且在运行时不会改变局部变量表的大小(这里的大小指变量槽的数量)。<br>
+对于此内存区域的两类异常状况：</p>
+<ul>
+<li>StackOverflowError: 如果线程请求的栈深度大于虚拟机允许的最大深度。</li>
+<li>OutOfMenoryError: 如果虚拟机允许栈容量动态扩展，那么当栈扩展无法申请到足够的内存则抛出。</li>
+</ul>
+<!-- more -->
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://CarryCKW.github.io/-ExeOrOR7/" class="tag">
-                    旅途感想
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://CarryCKW.github.io/-GdGZqcP8/">
+                <a href="https://CarryCKW.github.io/cNC0UKbIP/">
                   <h3 class="post-title">
-                    someone
+                    A dream away
                   </h3>
                 </a>
               </div>
