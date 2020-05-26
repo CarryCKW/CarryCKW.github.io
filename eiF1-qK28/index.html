@@ -8,9 +8,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://CarryCKW.github.io/favicon.ico?v=1590406781761">
+<link rel="shortcut icon" href="https://CarryCKW.github.io/favicon.ico?v=1590495424448">
 <link rel="stylesheet" href="https://CarryCKW.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -33,7 +39,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://CarryCKW.github.io">
-        <img src="https://CarryCKW.github.io/images/avatar.png?v=1590406781761" class="site-logo">
+        <img src="https://CarryCKW.github.io/images/avatar.png?v=1590495424448" class="site-logo">
         <h1 class="site-title">Great Perheps</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -168,6 +174,12 @@ Java堆存储内容的共性是，无论哪个区域，存储的都是对象的�
             
 
             
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
 
           </div>
 
@@ -195,6 +207,29 @@ var app = new Vue({
     hljs.initHighlightingOnLoad()
   </script>
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '5770c5aeb820a5ff1be0',
+        clientSecret: '82ed045cdb7b46b929759738465931d4981aabdc',
+        repo: 'CarryCKW.github.io',
+        owner: 'CarryCKW',
+        admin: ['CarryCKW'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
