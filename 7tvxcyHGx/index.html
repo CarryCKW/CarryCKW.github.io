@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | Great Perheps</title>
+<title>近日感想 | Great Perheps</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,13 +12,21 @@
 <link rel="stylesheet" href="https://CarryCKW.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="Take a break, write some code, and do what you do best.">
+    <meta name="description" content="能够和这两个同学组队估计是这段时间来最幸运的事了叭，其实我还是很享受这段游戏体验的，果然一群人一起努力比一个人孤军奋战有意思，不由得想到在计科院居然只找到一两人和我讨论讨论技术或者生活感想，还是志同道合的人难找啊！
+和他们这段时间的思维碰撞..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -100,14 +108,38 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">近日感想</h2>
+            <div class="post-date">2020-09-14</div>
             
-              <a class="tag" href="https://CarryCKW.github.io/3nFRFHUB_/">JVM</a>
+            <div class="post-content" v-pre>
+              <p>能够和这两个同学组队估计是这段时间来最幸运的事了叭，其实我还是很享受这段游戏体验的，果然一群人一起努力比一个人孤军奋战有意思，不由得想到在计科院居然只找到一两人和我讨论讨论技术或者生活感想，还是志同道合的人难找啊！<br>
+和他们这段时间的思维碰撞还是让我回想起那句让人为之一颤的话，没有数学思维的Coder只能固步自封，在写完这几行代码后我尽然没有多少成就感，并不是说难度不高，而是当我回看我写好的代码时不愿面对的现实，代码风格着实是一大原因，功能划分也有模糊的界限，以导致糟糕的观赏体验，或许结果不需要太在乎过程，但这不是我接受的；又或许我正在远离数学的道路上越走越远，希望不会发生叭。<br>
+那么如何找到我久久期待的呢？打破假装的冷漠？</p>
+
+            </div>
             
-              <a class="tag" href="https://CarryCKW.github.io/-ExeOrOR7/">旅途感想</a>
             
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://CarryCKW.github.io/eiF1-qK28/">
+                  <h3 class="post-title">
+                    JVM运行时数据区域
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
+
         </div>
       </div>
     </div>
@@ -132,6 +164,29 @@ var app = new Vue({
     hljs.initHighlightingOnLoad()
   </script>
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '5770c5aeb820a5ff1be0',
+        clientSecret: '82ed045cdb7b46b929759738465931d4981aabdc',
+        repo: 'CarryCKW.github.io',
+        owner: 'CarryCKW',
+        admin: ['CarryCKW'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 

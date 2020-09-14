@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://CarryCKW.github.io</id>
     <title>Great Perheps</title>
-    <updated>2020-05-26T12:17:08.510Z</updated>
+    <updated>2020-09-14T11:35:53.188Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://CarryCKW.github.io"/>
     <link rel="self" href="https://CarryCKW.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://CarryCKW.github.io/images/avatar.png</logo>
     <icon>https://CarryCKW.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Great Perheps</rights>
+    <entry>
+        <title type="html"><![CDATA[近日感想]]></title>
+        <id>https://CarryCKW.github.io/7tvxcyHGx/</id>
+        <link href="https://CarryCKW.github.io/7tvxcyHGx/">
+        </link>
+        <updated>2020-09-14T03:41:41.000Z</updated>
+        <content type="html"><![CDATA[<p>能够和这两个同学组队估计是这段时间来最幸运的事了叭，其实我还是很享受这段游戏体验的，果然一群人一起努力比一个人孤军奋战有意思，不由得想到在计科院居然只找到一两人和我讨论讨论技术或者生活感想，还是志同道合的人难找啊！<br>
+和他们这段时间的思维碰撞还是让我回想起那句让人为之一颤的话，没有数学思维的Coder只能固步自封，在写完这几行代码后我尽然没有多少成就感，并不是说难度不高，而是当我回看我写好的代码时不愿面对的现实，代码风格着实是一大原因，功能划分也有模糊的界限，以导致糟糕的观赏体验，或许结果不需要太在乎过程，但这不是我接受的；又或许我正在远离数学的道路上越走越远，希望不会发生叭。<br>
+那么如何找到我久久期待的呢？打破假装的冷漠？</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JVM运行时数据区域]]></title>
         <id>https://CarryCKW.github.io/eiF1-qK28/</id>
