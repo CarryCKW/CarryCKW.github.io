@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://CarryCKW.github.io</id>
     <title>Great Perheps</title>
-    <updated>2020-09-14T11:39:07.650Z</updated>
+    <updated>2020-09-16T12:24:05.896Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://CarryCKW.github.io"/>
     <link rel="self" href="https://CarryCKW.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://CarryCKW.github.io/images/avatar.png</logo>
     <icon>https://CarryCKW.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Great Perheps</rights>
+    <entry>
+        <title type="html"><![CDATA[追忆]]></title>
+        <id>https://CarryCKW.github.io/cyUbK--3O/</id>
+        <link href="https://CarryCKW.github.io/cyUbK--3O/">
+        </link>
+        <updated>2020-09-16T11:21:03.000Z</updated>
+        <content type="html"><![CDATA[<p>不知从何时起，看代码清单，技术讲解和刷算法题成了日常，甚至找不到任何理由不这么做，可能除了这些没什么“更有意思”，对我来说尝试新的技术成了获得新鲜感的重要源泉；久而久之我也会害怕，当自己没有时间能够选择自己喜欢的事务时，会不会很久时间内把自己束缚于狭窄的技术空间内，其实以后都对于我来说这可能是常态了，留给自己真正向往的自由已经所剩不多，996或许是开始，但我不想让其成为终点；从另一方面来看，自己又在潜移默化的接受这种拧螺丝的思想，想来略有伤感，但这路途中有充满了机会，可能也是一种动力叭。<br>
+近日又陷入了奇怪的循环，勾指起誓，这首歌似乎又给我带来了感觉，没错，是被我压抑了很久的悸动。如果没有那次经历，说不定我还是以代码和歌为伴，至少从长久考虑，这段旅途一定是少了点什么。时间久了，我对自己客观上的变化感还是很明显的，至少少了很多勇气，不敢尝试的事变多了，多出来的顾虑或许是成长叭。<br>
+那天，那个人和他们平缓地说**院的男孩还是不错的，或许叭，至于我，当时感觉他说得挺对的，至少她在旁边也听见了，想想平时左右代码和歌为伴，缺少了很多和其他事接触的机会，可能显得单纯了点，可这才是我喜欢coding的理由阿，如果还有机会，给她点杯奶茶聊聊以后叭。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[近日感想]]></title>
         <id>https://CarryCKW.github.io/7tvxcyHGx/</id>
