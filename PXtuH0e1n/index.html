@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>故事 | Great Perheps</title>
+<title>Web后端个人感想 | Great Perheps</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,8 +24,8 @@
 
 
 
-    <meta name="description" content="这个博客主要放一些自己近期的学习内容、在学习道路上走过的弯路经历、接触不同事物时引发的感想、将来想要发展的方向以及算法学习的内容和感悟等等，主要用来打发平时学习后的无聊时光，当然也会将这个作为我的小日记本，记载生活点滴。
-PS：写给未来的自..." />
+    <meta name="description" content="小记：
+不得不承认，最开始接触web后端开发是课内开设了这门课，而上课的老师依旧用着古老的技术，一开始推荐的《Tomcat与Java Web技术详解》一书，说实话，自己是那种不会跟着课程进度学的人，所以第一周课快结束的时候我就大概做出来几个..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -109,17 +109,32 @@ PS：写给未来的自..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">故事</h2>
-            <div class="post-date">2020-05-24</div>
+            <h2 class="post-title">Web后端个人感想</h2>
+            <div class="post-date">2020-12-30</div>
             
             <div class="post-content" v-pre>
-              <p>这个博客主要放一些自己近期的学习内容、在学习道路上走过的弯路经历、接触不同事物时引发的感想、将来想要发展的方向以及算法学习的内容和感悟等等，主要用来打发平时学习后的无聊时光，当然也会将这个作为我的小日记本，记载生活点滴。</p>
-<p>PS：写给未来的自己，用来体验和感悟人生😇.</p>
-<p>故事，正在发生...<br>
-<img src="https://CarryCKW.github.io/post-images/1590331422958.jpg" alt="" loading="lazy"></p>
+              <p>小记：<br>
+不得不承认，最开始接触web后端开发是课内开设了这门课，而上课的老师依旧用着古老的技术，一开始推荐的《Tomcat与Java Web技术详解》一书，说实话，自己是那种不会跟着课程进度学的人，所以第一周课快结束的时候我就大概做出来几个简单的页面跳转加一下简易的数据处理，很快我意识到这一周的开发时间在真正有用的业务逻辑上花的时间占比很少，总是在配置，配置，当然自己的迫切使得自己放弃了生命周期的话题的深入。</p>
+<pre><code>    自己感受到需要一种更为快速的方式，此时不禁脑海中映出《Spring实战》中关于MVC的介绍，自己恶补了Spring从IoC到DI，再真正进入MVC的世界，当遇见注解配置的时候不禁觉得很方便（殊不知框架通过反射和代理给了捷径），就像很多书虫一样，知识获取的速度只受自己理解快慢的影响，很快通过spring方便的配置(写下了刻板的/config, /controller, /model, /service, /dao ... ... 的分类)和Java代码风格的JSP完成了第一个课程设计作业，名为CatFound，简单的查询数据库和显示的案例，那时候心中还有点沾沾自喜。
+
+    就这样当第二个课程作业来领的时候，熟练的配置和整理请求映射，并且将HTML页面改成JSP，不过这次让我困扰的是页面变多，并且前后端变量的强耦合，让我身心疲惫，就像是新鲜感慢慢被吞噬了，并且对于权限校验也比较野蛮.
+
+    第三次面对的不再是作业,而是给另一半和自己的交代,它更像是个人相册,不过开始写之前自己不再是那个因为写出效果而沾沾自喜的男孩,此时是拥抱SpringBoot的时刻,不过没有过多依赖它的方便,需要Bean还是自己显示配置,毕竟在走路的时候就不应该坐火箭,只是借用别人的鞋子走自己的路罢了(略有五十步笑百步的讽刺),过程中反而觉得前端三剑客搭配的优美,配合jQuery,尽可能的前后端分离,只是多出来的思考,比如页面的授权(如何避免Redis使用过程中同一账号多处登录的Token强制过期问题), 通过面向切面实现和自定义注解实现请求拦截(查看用户Token或者更新前端新增信息而非全量查表来优化异步刷新), 再或者是对于DB表的设计优化,应该最为深入思考的开始.
+
+    可是奠基的基础技术没怎么变过,只是封装的更方便罢了,毕竟C++也可以像Java一样.
+</code></pre>
 
             </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://CarryCKW.github.io/7tvxcyHGx/">
+                  <h3 class="post-title">
+                    近日感想
+                  </h3>
+                </a>
+              </div>
             
 
             
