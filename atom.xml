@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://CarryCKW.github.io</id>
     <title>Great Perheps</title>
-    <updated>2021-01-20T00:32:09.821Z</updated>
+    <updated>2021-01-30T01:25:18.832Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://CarryCKW.github.io"/>
     <link rel="self" href="https://CarryCKW.github.io/atom.xml"/>
@@ -10,6 +10,70 @@
     <logo>https://CarryCKW.github.io/images/avatar.png</logo>
     <icon>https://CarryCKW.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Great Perheps</rights>
+    <entry>
+        <title type="html"><![CDATA[个人相册开发说明书]]></title>
+        <id>https://CarryCKW.github.io/RQOJ9NM2D/</id>
+        <link href="https://CarryCKW.github.io/RQOJ9NM2D/">
+        </link>
+        <updated>2021-01-15T12:59:44.000Z</updated>
+        <content type="html"><![CDATA[<p>目录</p>
+<p>1.开发和部署…………………………………………………………………<br>
+2.需求分析……………………………………………………………………<br>
+3.系统架构……………………………………………………………………<br>
+3.1架构总览………………………………………………………………<br>
+3.2技术栈…………………………………………………………………<br>
+3.3业务介绍………………………………………………………………<br>
+4.改进之处……………………………………………………………………<br>
+5.效果展示……………………………………………………………………</p>
+<p>1.开发和部署<br>
+开发环境：Windows10平台IDEA开发，配置Gradle，MySQL，Redis环境<br>
+部署：部署阿里云Ubuntu16服务器<br>
+开源代码：https://github.com/CarryCKW/guluguji<br>
+2.需求分析<br>
+2.1 用户需求<br>
+2.1.1需要完整的用户登录界面，能够根据登录用户不同权限来展示不同内容，例如游客登录只能显示相册部分照片，并且其他附加功能禁用；对于正常用户使用，所有功能都可正常使用，但仅限于自己账户内容。<br>
+2.1.2功能需求：<br>
+1）用户登录。<br>
+2）照片上传，且满足每次可以上传多张同一主题的照片，并且能够为这一组照片添加简要和详细介绍；<br>
+3）照片预览界面需要根据上传的主题归类显示，显示每组照片的第一张照片，点击照片后可跳转新的界面来查看这一组所有的照片，并且可以显示详细的介绍内容。<br>
+4）照片墙，能够把所有照片显示出来，没有归类。<br>
+5）安全性，自己只能查看自己的内容。</p>
+<p>3.系统架构<br>
+3.1架构总览<br>
+<img src="https://CarryCKW.github.io/post-images/1611969624599.png" alt="" loading="lazy"><br>
+3.2技术栈<br>
+采用SpringBoot + bootstrap前后端分离技术，后端主要使用SpringMVC来实现请求相应，数据库采用MySQL，缓存使用Redis。前端使用HTML页面展示，使用Ajax来异步请求数据。项目通过jar包来运行于Linux服务器。</p>
+<p>3.3业务介绍<br>
+3.3.1数据存储层和能力层<br>
+1.关于图片存取通常的做法是在Linux中创建多个文件夹，将图片存入文件夹中，而数据库中存放图片的文件路径索引，然后前端通过PHP直接获取图片，但是此处暂时通过将图片的二进制数据存入数据库中，在数据传输中采用base64编码。<br>
+2.代码中配置JdbcTemplate进行数据库的访问。<br>
+3.代码中配置JedisPool通过获取JedisClient进行访问和存储缓存数据。<br>
+4.对于两张表数据的插入严格保证顺序和一致性。</p>
+<p>3.3.2服务层<br>
+1.服务层提供Blog界面的数据服务，图片服务，Token缓存管理服务。<br>
+2.数据服务主要通过下层提供的Dao接口将数据整合成对象，返回给上层控制层。<br>
+3.Token服务主要是将登录用户的ID和UUID的键值对存入Redis,并设置过期时间，为权限校验提供服务。</p>
+<p>3.3.3管理层<br>
+1.控制层提供以上请求映射，遵守Restful规则。<br>
+2.对于不存在的请求路径返回404界面。<br>
+3.对于不同的请求，有些返回静态HTML页面作为界面模板，有些返回服务层返回的数据，将数据转化成JSON格式以相应Ajax请求，并且返回不同的HTTP状态码。</p>
+<p>3.3.4 权限管理<br>
+1.采用自定义注解 @SecurityVerification，将该注解应用于控制层的请求方法上，。<br>
+2.SercurityHandler使用 SpringAOP的面向切面技术来监听指定方法并且通过反射检查方法是否被@SecurityVerification注解，然后再次使用反射获取HTTP请求中携带的请求头，通过查看是否存在合理的用户Token，来决定拦截请求返回错误码或者通行请求。</p>
+<p>3.3.5前端web<br>
+1.前端数据显示的主要思路为对于每个页面，先请求静态HTML页面，利用页面中onload方法，通过Ajax请求数据，将返回的JSON格式的数据通过动态加载DOM元素的方法将数据展现在界面上。<br>
+２.对于数据的提交，主要也通过Ajax 提交至后台，交互的依据主要根据提供的Restful接口。</p>
+<p>4.改进之处和设计感想<br>
+待改进：<br>
+1.前后端图片传送时没有压缩，导致加载较慢，为了提高加载速度和用户体验，也可以将js，css部分压缩传输。<br>
+2.图片加载方式直接存放数据库，会导致图片量增大之后索引变慢。<br>
+3.通过检查Token方法并不能防止请求重发的问题，或者携带并非用户自己的伪Token。<br>
+4.接口间的数据拢余，有些数据需要前端过滤，倒是流量损耗。</p>
+<p>设计感想：<br>
+重新体验了从设计数据库，到第一行代码的编写，到最后打包部署的快感，逐渐感受到数据库设计不够优良在后续开发的疑惑，也感受到对外暴露的接口的安全和完备的重要性，<br>
+每次有新的需求加入的时候都要增改接口，或许是因为功能少，并没有从基层接口写起，但是感觉利用松散的接口去完成新的接口也是不错的主意，有人说学技术最好的方式是BFS和DFS的结合，是的阿，在这个课程设计中，全栈开发不就是BFS嘛，下一步不就是深入拓展新旧知识了吗。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Web后端个人感想]]></title>
         <id>https://CarryCKW.github.io/PXtuH0e1n/</id>
